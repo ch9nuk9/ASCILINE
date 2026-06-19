@@ -35,7 +35,7 @@ No autoplay restrictions. To the browser, it's just text on a canvas.
 2.  **Frontend (Vanilla JS)**: Receives binary frames via WebSockets, manages a jitter buffer, and renders to a Canvas grid.
 3.  **Communication**: Optimized WebSocket protocol with a custom `INIT` handshake for dynamic resolution/FPS adjustment.
 
-## 🗜️ Adaptive Frame Codec (opt-in, backward compatible)
+## 🗜️ Adaptive Frame Codec (opt-in,valid for mod [2-5])
 
 The original binary protocol re-sends the full grid every frame. An opt-in
 adaptive codec picks the smallest of three encodings per frame and tags it in a
@@ -58,7 +58,6 @@ the tested one.
 | content | vs. legacy |
 | :------ | :--------- |
 | static screen / slideshow | **0.3%** (≈375×) |
-| pixel mode | 11.6% (≈8.6×) |
 | high-motion / full-frame change | 63% (never worse than legacy) |
 
 An optional `--quality {lossless,high,balanced,low}` enables lossy *temporal
